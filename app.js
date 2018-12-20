@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     var browserVersionNumber = Number(browserVersion);
 
     //res.send(`<h1>${browserName}<h1>`);
-    res.send(`${ua}`)
+    res.send(`${req}`)
 
     console.log(parser.setUA(ua).getBrowser());
 
