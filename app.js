@@ -5,18 +5,7 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-    var parser = new UAParser();
-    var ua = req.headers['user-agent'];
-    var browserName = parser.setUA(ua).getBrowser().name;
-    var fullBrowserVersion = parser.setUA(ua).getBrowser().version;
-    var browserVersion = fullBrowserVersion.split(".", 1).toString();
-    var browserVersionNumber = Number(browserVersion);
-
-    res.send(browserName);
-
-    console.log(parser.setUA(ua).getBrowser());
-
-
+    res.send(req.headers['user-agent']);
 });
 
 
